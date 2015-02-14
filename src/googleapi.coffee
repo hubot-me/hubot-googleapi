@@ -77,4 +77,13 @@ module.exports = (robot)->
     updateCredential robot, (err)->
       return callback(err) if err
       serviceClient = google[service](version)
-      endpoint.split(".").reduce(((a, e)-> a[e]), serviceClient)(params, callback)
+      console.log("service: #{service}")
+      console.log("version: #{version}")
+      console.log("serviceClient: #{serviceClient}")
+      console.log("endpoint: #{endpoint}")
+      console.log("params: #{params}")
+      endpoint
+        .split(".")
+        .reduce(
+          ((a, e)-> a[e]), serviceClient
+        )(params, callback)
