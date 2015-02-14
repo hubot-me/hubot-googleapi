@@ -78,6 +78,7 @@ module.exports = (robot)->
       return callback(err) if err
       serviceClient = google[service](version)
       console.log("service: #{service}")
+      console.log("google[service]: #{google[service]}")
       console.log("version: #{version}")
       console.log("serviceClient: #{serviceClient}")
       console.log("endpoint: #{endpoint}")
